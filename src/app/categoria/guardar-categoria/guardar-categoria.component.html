@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="card bg-light">
+    <h5 class="card-header">Registrar Nueva Categoria</h5>
+    <div class="card-body">
+      <form (ngSubmit) = "onSubmitCategoria()">
+
+        <div class="row mb-3">
+          <label for="nombre" class="col-sm-2 col-form-label">NOMBRE</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="categoria.nombre" name="nombre">
+          </div>
+        </div>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-outline-danger me-md-2" type="button" [routerLink]="['/categorias']"><i class="fas fa-window-close"></i> Cancelar</button>
+            <button class="btn btn-outline-primary" role="button"><i class="far fa-save"></i> Registrar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+</div>

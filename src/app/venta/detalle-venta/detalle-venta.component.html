@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row mt-5" *ngIf="venta">
+    <div class="col-md-4 mx-auto">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header text-center">
+              Detalle Venta:
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>ID Venta: </b>{{venta.idVenta}}</li>
+              <li class="list-group-item"><b>Fecha: </b>{{venta.fecha}}</li>
+              <li class="list-group-item"><b>Descripcion: </b>{{venta.descripcion}}</li>
+              <li class="list-group-item"><b>Precio: </b>{{venta.precio}}</li>
+              <li class="list-group-item"><b>Cantidad: </b>S/. {{venta.cantidad}}</li>
+              <li class="list-group-item"><b>Producto: </b>{{venta.producto.nombre}}</li>
+              <li class="list-group-item"><b>Cliente: </b>{{venta.cliente.nombres}}</li>
+              <li class="list-group-item"><b>Empleado: </b>{{venta.empleado.nombres}}</li>
+            </ul>
+            <div class="card-footer">
+                <button class="btn btn-outline-primary btn-block" [routerLink]="['/productos']"><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </div>
+          </div>
+
+    </div>
+</div>
+</div>

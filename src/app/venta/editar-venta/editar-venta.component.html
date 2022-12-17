@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="card bg-light">
+    <h5 class="card-header">Registra Venta</h5>
+    <div class="card-body">
+      <form (ngSubmit) = "onSubmitVenta()">
+        <div class="row mb-3">
+          <label for="fecha" class="col-sm-2 col-form-label">FECHA</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" placeholder="Ingrese Nombre" [(ngModel)]="venta.fecha" name="fecha">
+          </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="descripcion" class="col-sm-2 col-form-label">DESCRIPCION</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Ingrese Descripcion" [(ngModel)]="venta.descripcion" name="descripcion">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="precio" class="col-sm-2 col-form-label">PRECIO</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Ingrese Precio" [(ngModel)]="venta.precio" name="precio">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="cantidad" class="col-sm-2 col-form-label">CANTIDAD</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Ingrese Cantidad" [(ngModel)]="venta.cantidad" name="cantidad">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="total" class="col-sm-2 col-form-label">TOTAL</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Ingrese Total" [(ngModel)]="venta.total" name="total">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="producto" class="col-sm-2 col-form-label">PRODUCTO</label>
+            <div class="col-sm-10">
+              <select [compareWith]="compararProducto" [(ngModel)]="venta.producto" name="producto" class="form-select" aria-label="Default select example">
+                <option [ngValue]="undefined">---Seleccione Producto---</option>
+                <option *ngFor="let prod of producto" [ngValue]="prod">{{prod.nombre}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="empleado" class="col-sm-2 col-form-label">Empleado</label>
+            <div class="col-sm-10">
+              <select [compareWith]="compararEmpleado" [(ngModel)]="venta.empleado" name="empleado" class="form-select" aria-label="Default select example">
+                <option [ngValue]="undefined">---Seleccione Empleado---</option>
+                <option *ngFor="let emp of empleado" [ngValue]="emp">{{emp.nombres}} {{emp.apellidos}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="cliente" class="col-sm-2 col-form-label">CLIENTE</label>
+            <div class="col-sm-10">
+              <select [compareWith]="compararCliente" [(ngModel)]="venta.cliente" name="cliente" class="form-select" aria-label="Default select example">
+                <option [ngValue]="undefined">---Seleccione Cliente---</option>
+                <option *ngFor="let cli of cliente" [ngValue]="cli">{{cli.nombres}} {{cli.apellidos}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-outline-danger me-md-2" type="button" [routerLink]="['/ventas']"><i class="fas fa-window-close"></i> Cancelar</button>
+            <button class="btn btn-outline-primary" role="button"><i class="far fa-save"></i> Registrar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+</div>

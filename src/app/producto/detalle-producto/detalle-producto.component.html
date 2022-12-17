@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row mt-5" *ngIf="producto">
+    <div class="col-md-4 mx-auto">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header text-center">
+              Detalle Producto:
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>ID Producto: </b>{{producto.idProducto}}</li>
+              <li class="list-group-item"><b>Nombre: </b>{{producto.nombre}}</li>
+              <li class="list-group-item"><b>Descripcion: </b>{{producto.descripcion}}</li>
+              <li class="list-group-item"><b>Imagen: </b>{{producto.imagen}}</li>
+              <li class="list-group-item"><b>Precio: </b>S/. {{producto.precio}}</li>
+              <li class="list-group-item"><b>Cantidad: </b>{{producto.cantidad}}</li>
+            </ul>
+            <div class="card-footer">
+                <button class="btn btn-outline-primary btn-block" [routerLink]="['/productos']"><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </div>
+          </div>
+
+    </div>
+</div>
+</div>

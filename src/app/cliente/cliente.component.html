@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Lista de Clientes </div>
+    <div class="card-body">
+      <a class="btn btn-outline-primary" [routerLink]="['/clientes/registrar']"><i class="fas fa-plus"></i> Registrar
+        Nuevo Cliente</a>
+      <table class="table caption-top">
+        <caption></caption>
+        <thead>
+          <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NOMBRES</th>
+              <th scope="col">APELLIDOS</th>
+              <th scope="col">DIRECCION</th>
+              <th scope="col">TELEFONO</th>
+              <th scope="col">TIPO DOCUMENTO</th>
+              <th scope="col">Nº DOCUMENTO</th>
+              <th scope="col" class="text-center">ACCIONES</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let clientes of cliente"> <!--Recorremos el array y cargamos nuestra tabla-->
+            <td>{{clientes.idCliente}}</td>
+            <td>{{clientes.nombres}}</td>
+            <td>{{clientes.apellidos}}</td>
+            <td>{{clientes.direccion}}</td>
+            <td>{{clientes.telefono}}</td>
+            <td>{{clientes.tipo_documento}}</td>
+            <td>{{clientes.numero_documento}}</td>
+              <td class="text-center">
+                <button (click)="actualizarCliente(clientes.idCliente)" class="btn btn-outline-warning">
+                <i class="fas fa-edit"></i></button>
+                <button (click)="verDetallesDelCliente(clientes.idCliente)" class="btn btn-outline-info"
+                  style="margin-left : 10px;"><i class="fas fa-eye"></i></button>
+                <button (click)="eliminarCliente(clientes.idCliente)" class="btn btn-outline-danger"
+                  style="margin-left : 10px;"><i class="fas fa-trash-alt"></i></button>
+              </td>
+          </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
